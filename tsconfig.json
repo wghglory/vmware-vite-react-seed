@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "types": ["vite/client", "vite-plugin-svgr/client"],
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -17,5 +22,5 @@
     "jsx": "react-jsx"
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{"path": "./tsconfig.node.json"}]
 }
