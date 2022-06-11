@@ -1,4 +1,17 @@
 import {CdsButton} from '@cds/react/button';
+import {
+  CardBlock,
+  CardFooter,
+  CardFooterAction,
+  CardHeader,
+  CardText,
+  CardTitle,
+  CoreCard,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from '@tmc/clr-react';
 import {useState} from 'react';
 
 import logo from '@/assets/logo.svg';
@@ -22,15 +35,28 @@ export default function PlaygroundPage() {
       <p className="text-red-500">Tailwind color</p>
       <p>{l10n('common.back')}</p>
       <p>{formatDate(new Date(), 'MMMM d, y, h:mm:ss a')}</p>
-      <p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-        {' | '}
-        <a className="App-link" href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener noreferrer">
-          Vite Docs
-        </a>
-      </p>
+      <CoreCard>
+        <CardHeader>Header</CardHeader>
+        <CardBlock>
+          <CardTitle>Card content can contain text, links, images, lists and more.</CardTitle>
+          <CardText>Block</CardText>
+        </CardBlock>
+        <CardFooter>
+          <CardFooterAction>Action 1</CardFooterAction>
+          <CardFooterAction>Action 2</CardFooterAction>
+          <Dropdown>
+            <DropdownToggle family="link" small>
+              Dropdown 1
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>Harder</DropdownItem>
+              <DropdownItem>Better</DropdownItem>
+              <DropdownItem>Faster</DropdownItem>
+              <DropdownItem>Stronger</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </CardFooter>
+      </CoreCard>
     </header>
   );
 }

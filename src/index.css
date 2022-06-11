@@ -4,6 +4,8 @@
 @import '../node_modules/@cds/core/styles/theme.dark.css';
 @import '../node_modules/@cds/core/table/table.min';
 
+@import '../node_modules/@tmc/clr-react/styles/clr-react.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
