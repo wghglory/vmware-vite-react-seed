@@ -1,0 +1,30 @@
+task npmBuild(type: Exec) {
+    dependsOn "npmInstall"
+    workingDir "$projectDir"
+    inputs.dir "$projectDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty("os.name").toUpperCase().contains("WINDOWS")){
+        commandLine "npm.cmd", "run", "build"
+    } else {
+        commandLine "npm", "run", "build"
+    }
+    doLast {
+        ant.move file: "${projectDir}/dist",
+                tofile: "${projectDir}/dist/static"
+    }
+}
+
+task npmInstall(type:Exec) {
+    workingDir "$projectDir"
+    inputs.dir "$projectDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty("os.name").toUpperCase().contains("WINDOWS")){
+        commandLine "npm.cmd", "install", "--registry=http://build-artifactory.eng.vmware.com/artifactory/api/npm/npm"
+    } else {
+        commandLine "npm", "install", "--registry=http://build-artifactory.eng.vmware.com/artifactory/api/npm/npm"
+    }
+}
+
+task clean (type: Delete) {
+    delete './dist'
+}
