@@ -1,12 +1,12 @@
 import cors from 'cors';
 import express, {Application, Request, Response} from 'express';
 
-import {apiPrefix} from './const';
 import {router as authRouter} from './routes/auth.route';
 import {router as tenantRouter} from './routes/tenant.route';
 
 const app: Application = express();
 const port = 3000;
+const apiPrefix = '/api/v1';
 
 // Body parsing Middleware
 app.use(express.json());
