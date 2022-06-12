@@ -1,4 +1,10 @@
-/* NOTE: cannot import global.min.css and module.shims.min.css due to build error */
+@import url('@clr/icons/clr-icons.min.css');
+/* replace with datagrid only */
+/* @import url('@clr/ui/clr-ui.min.css'); */
+/* @import url('@clr/ui/clr-ui-dark.min.css'); */
+@import url('@vmware-react/clarity/dist/react-clarity.css');
+@import './styles/datagrid.css';
+
 @import '../node_modules/@cds/core/global.min.css';
 @import '../node_modules/@cds/city/css/bundles/default.min.css';
 @import '../node_modules/@cds/core/styles/theme.dark.css';
@@ -39,4 +45,92 @@ a {
   .input {
     @apply border-b border-gray-700 bg-transparent text-sm outline-none focus:border-b-2 focus:border-sky-600 dark:border-gray-200 dark:focus:border-sky-400;
   }
+}
+
+.datagrid-cell {
+  --datagrid-cell-width: auto;
+  border-top: inherit !important;
+  display: table-cell !important;
+  max-width: var(--datagrid-cell-width) !important;
+  min-width: var(--datagrid-cell-width) !important;
+  white-space: nowrap !important;
+  width: var(--datagrid-cell-width) !important;
+}
+
+.datagrid-column {
+  --datagrid-column-width: auto;
+  border-bottom: inherit !important;
+  display: table-cell !important;
+  max-width: var(--datagrid-column-width) !important;
+  min-width: var(--datagrid-column-width) !important;
+  position: relative !important;
+  white-space: nowrap !important;
+  width: var(--datagrid-column-width) !important;
+}
+
+.datagrid-column-handle {
+  height: 100% !important;
+  top: 0 !important;
+}
+
+.datagrid-column-separator {
+  left: auto !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+}
+
+.datagrid-column-separator::after {
+  height: calc(100% - 1em) !important;
+  margin: 0.5em 0 !important;
+  top: 0 !important;
+}
+
+.datagrid-filter {
+  position: absolute;
+}
+
+.datagrid-filter-toggle {
+  position: static;
+}
+
+.datagrid-filter-toggle-wrapper {
+  position: relative;
+}
+
+.datagrid-header {
+  display: table-header-group !important;
+  z-index: auto !important;
+}
+
+.datagrid-placeholder {
+  display: table-cell !important;
+}
+
+.datagrid-placeholder-container {
+  display: table-row !important;
+}
+
+.datagrid-placeholder-image {
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
+.datagrid-row {
+  display: table-row !important;
+}
+
+.datagrid-row-detail {
+  display: table-row !important;
+}
+
+.datagrid-table {
+  display: table !important;
+  min-width: 100% !important;
+}
+
+.datagrid-action-overflow {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }

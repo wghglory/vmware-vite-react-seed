@@ -13,12 +13,16 @@
     "postinstall": "cd src/server && yarn"
   },
   "dependencies": {
+    "@clr/icons": "^4.0.5",
+    "@clr/ui": "^4.0.5",
     "@cds/city": "^1.1.0",
     "@cds/core": "5.6.4",
     "@cds/react": "5.6.4",
     "@singleton-i18n/js-core-sdk": "^0.5.2",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
+    "@vmware-react/clarity": "^1.0.0-alpha.20",
+    "@vmware-react/icons": "^0.1.0",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "framer-motion": "^6.3.11",

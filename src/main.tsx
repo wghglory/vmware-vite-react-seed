@@ -1,4 +1,6 @@
 import './index.css';
+import '@clr/icons';
+import '@clr/icons/shapes/all-shapes';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';

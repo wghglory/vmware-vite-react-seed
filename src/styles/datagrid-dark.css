@@ -1,0 +1,2142 @@
+.datagrid {
+  border-collapse: separate;
+  border-style: solid;
+  /* clr-table-borderwidth */
+  border-width: 0.05rem;
+  /* clr-table-border-color */
+  border-color: #495865;
+  /* clr-table-border-radius */
+  border-radius: 0.15rem;
+  /* clr-table-bgcolor */
+  background-color: #21333b;
+  /* clr-table-font-color */
+  color: #acbac3;
+  margin: 0;
+  margin-top: 1.2rem;
+  max-width: 100%;
+  width: 100%;
+}
+.datagrid .datagrid-column,
+.datagrid .datagrid-cell {
+  font-size: 0.65rem;
+  line-height: 0.7rem;
+  border-top-style: solid;
+  /* clr-table-borderwidth */
+  border-top-width: 0.05rem;
+  /* clr-tablerow-bordercolor */
+  border-top-color: #495865;
+  padding: 0.55rem 0.6rem 0.55rem;
+  text-align: center;
+  vertical-align: top;
+}
+.datagrid .datagrid-column.left,
+.datagrid .datagrid-cell.left {
+  text-align: left;
+}
+.datagrid .datagrid-column.left:first-child,
+.datagrid .datagrid-cell.left:first-child {
+  padding-left: 0.3rem;
+}
+.datagrid .datagrid-column {
+  /* clr-thead-color */
+  color: #eaedf0;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  /* clr-thead-bgcolor */
+  background-color: #1b2a32;
+  vertical-align: bottom;
+  border-bottom-style: solid;
+  /* clr-table-borderwidth */
+  border-bottom-width: 0.05rem;
+  /* clr-table-border-color */
+  border-bottom-color: #495865;
+  border-top: 0 none;
+}
+.datagrid .datagrid-body .datagrid-row:first-child .datagrid-cell {
+  border-top: 0 none;
+}
+.datagrid .datagrid-body + .datagrid-body {
+  border-top-style: solid;
+  /* clr-table-borderwidth */
+  border-top-width: 0.05rem;
+  /* clr-table-border-color */
+  border-top-color: #495865;
+}
+.datagrid .datagrid-header .datagrid-column:first-child {
+  border-radius: 0;
+  /* clr-table-cornercellradius */
+  border-top-left-radius: 0.1rem;
+}
+.datagrid .datagrid-header .datagrid-column:last-child {
+  border-radius: 0;
+  /* clr-table-cornercellradius */
+  border-top-right-radius: 0.1rem;
+}
+.datagrid .datagrid-body:last-child .datagrid-row:last-child .datagrid-cell:first-child {
+  border-radius: 0;
+  /* clr-table-cornercellradius */
+  border-bottom-left-radius: 0.1rem;
+}
+.datagrid .datagrid-body:last-child .datagrid-row:last-child .datagrid-cell:last-child {
+  border-radius: 0;
+  /* clr-table-cornercellradius */
+  border-bottom-right-radius: 0.1rem;
+}
+
+.datagrid-compact .datagrid-column,
+.datagrid-compact .datagrid-cell {
+  padding-top: 0.3rem;
+  padding-bottom: 0.25rem;
+}
+
+.datagrid-host {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+.datagrid {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow: auto;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-top: 0.6rem;
+}
+
+.datagrid-container {
+  width: auto;
+  font-size: 0.65rem;
+  padding: 0.55rem 0.6rem 0.55rem;
+}
+
+.datagrid-expandable-caret {
+  padding: 0.1rem 0.2rem 0.15rem;
+  text-align: center;
+}
+.datagrid-expandable-caret .datagrid-expandable-caret-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+button.datagrid-expandable-caret .datagrid-expandable-caret-button {
+  cursor: pointer;
+}
+
+.datagrid-expandable-caret .datagrid-expandable-caret-icon {
+  /* clr-datagrid-icon-color */
+  color: #acbac3;
+  margin-top: 0.15rem;
+}
+.datagrid-expandable-caret .datagrid-expandable-caret-icon svg {
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.datagrid-expandable-caret .spinner {
+  margin-top: 0.3rem;
+}
+.datagrid-expandable-caret.datagrid-column {
+  padding: 0.55rem 0.6rem 0.55rem;
+}
+
+.datagrid-header,
+.datagrid-body,
+.datagrid-row,
+.datagrid-column,
+.datagrid-cell,
+.datagrid-fixed-column {
+  display: block;
+}
+
+.datagrid-row {
+  border-top-style: solid;
+  /* clr-table-borderwidth */
+  border-top-width: 0.05rem;
+  /* clr-table-border-color */
+  border-top-color: #495865;
+}
+.datagrid-row:first-of-type {
+  border-top: none;
+}
+.datagrid-row:hover {
+  /* clr-datagrid-row-hover */
+  background-color: #28404d;
+}
+.datagrid-row:hover .datagrid-row-sticky {
+  /* clr-datagrid-row-hover */
+  background-color: #28404d;
+}
+.datagrid-row.datagrid-selected {
+  /* clr-datagrid-row-selected */
+  color: white;
+  /* clr-global-selection-color */
+  background-color: #324f62;
+}
+.datagrid-row.datagrid-selected .datagrid-row-sticky {
+  /* clr-datagrid-row-selected */
+  color: white;
+  /* clr-global-selection-color */
+  background-color: #324f62;
+}
+.datagrid-row .datagrid-action-overflow {
+  position: absolute;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  padding: 0.3rem;
+  margin-left: 0.3rem;
+  border-style: solid;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+.datagrid-row .datagrid-action-overflow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  height: 0;
+  width: 0;
+  margin-top: -0.3rem;
+  border-top: 0.3rem solid transparent;
+  border-bottom: 0.3rem solid transparent;
+  border-right-width: 0.3rem;
+  border-right-style: solid;
+  /* clr-datagrid-popover-border-color */
+  border-right-color: black;
+}
+.datagrid-row .datagrid-action-overflow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  height: 0;
+  width: 0;
+  margin-top: -0.25rem;
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+  border-right-width: 0.25rem;
+  border-right-style: solid;
+  /* clr-datagrid-popover-bg-color */
+  border-right-color: #21333b;
+}
+.datagrid-row .datagrid-action-overflow .action-item {
+  /* clr-dropdown-text-color */
+  color: #acbac3;
+  font-size: 0.7rem;
+  letter-spacing: normal;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 1.15rem;
+  margin: 0;
+  padding: 0.05rem 1.2rem 0;
+  text-align: left;
+  width: 100%;
+}
+.datagrid-row .datagrid-action-overflow .action-item:hover,
+.datagrid-row .datagrid-action-overflow .action-item:focus {
+  /* clr-datagrid-action-popover-hover-color */
+  background-color: #28404d;
+  text-decoration: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.active {
+  /* clr-datagrid-row-hover */
+  background: #28404d;
+  /* clr-color-neutral-1000 */
+  color: black;
+}
+.datagrid-row .datagrid-action-overflow .action-item:focus {
+  outline: 0;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled,
+.datagrid-row .datagrid-action-overflow .action-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled:hover,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:hover {
+  background: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled:active,
+.datagrid-row .datagrid-action-overflow .action-item.disabled:focus,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:active,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:focus {
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item clr-icon {
+  vertical-align: middle;
+  -webkit-transform: translate3d(0px, -0.05rem, 0);
+  transform: translate3d(0px, -0.05rem, 0);
+}
+.datagrid-row .datagrid-action-overflow {
+  position: absolute;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  padding: 0.3rem;
+  margin-left: 0.3rem;
+  border-style: solid;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+.datagrid-row .datagrid-action-overflow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  margin-top: -0.3rem;
+  border-top: 0.3rem solid transparent;
+  border-bottom: 0.3rem solid transparent;
+  border-right-width: 0.3rem;
+  border-right-style: solid;
+  /* clr-datagrid-popover-border-color */
+  border-right-color: black;
+}
+.datagrid-row .datagrid-action-overflow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  margin-top: -0.25rem;
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+  border-right-width: 0.25rem;
+  border-right-style: solid;
+  /* clr-datagrid-popover-bg-color */
+  border-right-color: #21333b;
+}
+.datagrid-row .datagrid-action-overflow .action-item {
+  /* clr-dropdown-text-color */
+  color: #acbac3;
+  font-size: 0.7rem;
+  letter-spacing: normal;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 1.15rem;
+  margin: 0;
+  padding: 0.05rem 1.2rem 0;
+  text-align: left;
+  width: 100%;
+}
+.datagrid-row .datagrid-action-overflow .action-item:hover,
+.datagrid-row .datagrid-action-overflow .action-item:focus {
+  /* clr-datagrid-action-popover-hover-color */
+  background-color: #28404d;
+  text-decoration: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.active {
+  /* clr-datagrid-row-hover */
+  background: #28404d;
+  /* clr-color-neutral-1000 */
+  color: black;
+}
+.datagrid-row .datagrid-action-overflow .action-item:focus {
+  outline: 0;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled,
+.datagrid-row .datagrid-action-overflow .action-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled:hover,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:hover {
+  background: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled:active,
+.datagrid-row .datagrid-action-overflow .action-item.disabled:focus,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:active,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:focus {
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item clr-icon {
+  vertical-align: middle;
+  -webkit-transform: translate3d(0px, -0.05rem, 0);
+  transform: translate3d(0px, -0.05rem, 0);
+}
+.datagrid-row .datagrid-action-overflow {
+  position: absolute;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  padding: 0.3rem;
+  margin-left: 0.3rem;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  border-style: solid;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-color: 0.15rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+.datagrid-row .datagrid-action-overflow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  margin-top: -0.3rem;
+  border-right: 0.3rem solid;
+  /* clr-datagrid-popover-border-color */
+  border-right-color: black;
+  border-top: 0.3rem solid transparent;
+  border-bottom: 0.3rem solid transparent;
+}
+.datagrid-row .datagrid-action-overflow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  margin-top: -0.25rem;
+  border-right: 0.25rem solid #21333b;
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+}
+.datagrid-row .datagrid-action-overflow .action-item {
+  /* clr-dropdown-text-color */
+  color: #acbac3;
+  font-size: 0.7rem;
+  letter-spacing: normal;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 1.15rem;
+  margin: 0;
+  padding: 0.05rem 1.2rem 0;
+  text-align: left;
+  width: 100%;
+}
+.datagrid-row .datagrid-action-overflow .action-item:hover,
+.datagrid-row .datagrid-action-overflow .action-item:focus {
+  text-decoration: none;
+  /* clr-datagrid-action-popover-hover-color */
+  background-color: #28404d;
+}
+.datagrid-row .datagrid-action-overflow .action-item.active {
+  /* clr-datagrid-row-hover */
+  background: #28404d;
+  /* clr-datagrid-row-hover-font-color */
+  color: black;
+}
+.datagrid-row .datagrid-action-overflow .action-item:focus {
+  outline: 0;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled,
+.datagrid-row .datagrid-action-overflow .action-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled:hover,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:hover {
+  background: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item.disabled:active,
+.datagrid-row .datagrid-action-overflow .action-item.disabled:focus,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:active,
+.datagrid-row .datagrid-action-overflow .action-item:disabled:focus {
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.datagrid-row .datagrid-action-overflow .action-item clr-icon {
+  vertical-align: middle;
+  -webkit-transform: translate3d(0px, -0.05rem, 0);
+  transform: translate3d(0px, -0.05rem, 0);
+}
+.datagrid-row .datagrid-row-detail-wrapper {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.datagrid-row .datagrid-row-detail {
+  width: auto;
+}
+.datagrid-row .datagrid-row-detail .datagrid-cell {
+  padding-top: 0;
+  border: none;
+}
+.datagrid-row .datagrid-select {
+  min-width: 0.4rem;
+}
+.datagrid-row .datagrid-signpost-trigger .signpost {
+  margin: -0.36rem 0;
+  height: 1.236rem;
+}
+.datagrid-row .datagrid-signpost-trigger .signpost .signpost-trigger {
+  height: inherit;
+  line-height: 1.2rem;
+}
+.datagrid-row .datagrid-row-sticky {
+  z-index: 500;
+}
+
+.datagrid-row-sticky {
+  /* clr-table-bgcolor */
+  background-color: #21333b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  position: sticky;
+  left: 0;
+  z-index: 502;
+}
+.datagrid-row-sticky .datagrid-cell:last-child:after {
+  content: '';
+  width: 0.05rem;
+  height: calc(100% - 0.5rem);
+  position: absolute;
+  right: 0;
+  top: 0.25rem;
+  /* clr-table-border-color */
+  background-color: #495865;
+}
+
+.datagrid-row-scrollable {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+.datagrid-row-scrollable.is-replaced {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.datagrid-row-scrollable.is-replaced .datagrid-scrolling-cells {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.datagrid-row-scrollable .datagrid-column:last-child .datagrid-column-separator {
+  display: none;
+}
+
+.datagrid-row-flex {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+.datagrid-row-flex .datagrid-row-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+.datagrid-row-flex .datagrid-row-detail .datagrid-cell {
+  padding-top: 0;
+}
+
+.datagrid-scrolling-cells,
+.datagrid-scrolling-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+
+.datagrid-action-bar {
+  margin-top: 1.2rem;
+}
+.datagrid-action-bar ~ .datagrid-spinner {
+  height: calc(100% - 1.2rem);
+  top: 1.2rem;
+}
+
+.datagrid-header {
+  position: sticky;
+  top: 0;
+  z-index: 501;
+  width: auto;
+}
+.datagrid-header .datagrid-column {
+  border-bottom: none;
+}
+.datagrid-header .datagrid-row {
+  /* clr-thead-bgcolor */
+  background-color: #1b2a32;
+  border-top: none;
+  border-bottom-style: solid;
+  /* clr-global-borderwidth */
+  border-bottom-width: 0.05rem;
+  /* clr-table-border-color */
+  border-bottom-color: #495865;
+}
+.datagrid-header .datagrid-row .datagrid-row-sticky {
+  /* clr-thead-bgcolor */
+  background-color: #1b2a32;
+}
+.datagrid-header .datagrid-row:hover {
+  /* clr-thead-bgcolor */
+  background-color: #1b2a32;
+}
+.datagrid-header .datagrid-row:hover .datagrid-row-sticky {
+  /* clr-thead-bgcolor */
+  background-color: #1b2a32;
+}
+.datagrid-header .datagrid-row-scrollable {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.datagrid-table-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.datagrid-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  position: relative;
+}
+.datagrid-table .datagrid-body {
+  width: auto;
+}
+.datagrid-table .datagrid-column {
+  text-align: left;
+  min-width: 4.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  vertical-align: top;
+  border: none;
+}
+.datagrid-table .datagrid-column clr-dg-filter,
+.datagrid-table .datagrid-column clr-dg-string-filter,
+.datagrid-table .datagrid-column clr-dg-numeric-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-ordinal-group: 100;
+  -ms-flex-order: 99;
+  order: 99;
+  margin-left: auto;
+}
+.datagrid-table .datagrid-column .datagrid-filter-input-spacer {
+  width: 0.6rem;
+  display: inline-block;
+}
+.datagrid-table .datagrid-column .datagrid-numeric-filter-input {
+  width: 3.9rem;
+}
+.datagrid-table .datagrid-column .datagrid-filter-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  cursor: pointer;
+  float: right;
+  vertical-align: middle;
+  height: 0.7rem;
+  width: 0.7rem;
+  margin-left: 0.3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* clr-color-neutral-500 */
+  color: #b3b3b3;
+}
+button.datagrid-table .datagrid-column .datagrid-filter-toggle {
+  cursor: pointer;
+}
+
+.datagrid-table .datagrid-column .datagrid-filter-toggle:hover {
+  /* clr-color-action-600 */
+  color: #0072a3;
+}
+.datagrid-table .datagrid-column .datagrid-filter-toggle.datagrid-filter-open {
+  /* clr-color-action-600 */
+  color: #0072a3;
+}
+.datagrid-table .datagrid-column .datagrid-filter-toggle.datagrid-filtered {
+  /* clr-color-action-600 */
+  color: #0072a3;
+}
+.datagrid-table .datagrid-column .datagrid-filter {
+  top: 100%;
+  right: 0;
+  margin-top: 0.24rem;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  padding: 0.9rem;
+  border-style: solid;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  font-weight: normal;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-close-wrapper {
+  text-align: right;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-close-wrapper .close {
+  float: none;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-apply {
+  margin-bottom: 0;
+}
+.datagrid-table .datagrid-column .datagrid-filter {
+  top: 100%;
+  right: 0;
+  margin-top: 0.24rem;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  padding: 0.9rem;
+  border-style: solid;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  font-weight: normal;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-close-wrapper {
+  text-align: right;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-close-wrapper .close {
+  float: none;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-apply {
+  margin-bottom: 0;
+}
+.datagrid-table .datagrid-column .datagrid-filter {
+  top: 100%;
+  right: 0;
+  margin-top: 0.24rem;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  padding: 0.9rem;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  border-style: solid;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  font-weight: normal;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-close-wrapper {
+  text-align: right;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-close-wrapper .close {
+  float: none;
+}
+.datagrid-table .datagrid-column .datagrid-filter .datagrid-filter-apply {
+  margin-bottom: 0;
+}
+.datagrid-table .datagrid-column.datagrid-fixed-width {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.datagrid-table .datagrid-column .datagrid-column-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.datagrid-table .datagrid-column .datagrid-column-title {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  /* clr-table-font-color */
+  color: #acbac3;
+  text-align: left;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+button.datagrid-table .datagrid-column .datagrid-column-title {
+  cursor: pointer;
+}
+
+.datagrid-table .datagrid-column .datagrid-column-title .signpost .signpost-action.btn {
+  height: inherit;
+  line-height: inherit;
+}
+.datagrid-table .datagrid-column .datagrid-column-title .clr-checkbox-wrapper .clr-control-label {
+  margin-top: -0.48rem;
+}
+.datagrid-table .datagrid-column button.datagrid-column-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.datagrid-table .datagrid-column button.datagrid-column-title .sort-icon {
+  /* clr-color-action-600 */
+  color: #0072a3;
+  margin-left: auto;
+  height: 0.7rem;
+  width: 0.7rem;
+  vertical-align: middle;
+}
+.datagrid-table .datagrid-column .datagrid-column-separator {
+  position: relative;
+  left: 0.6rem;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  /* clr-global-borderwidth */
+  width: 0.05rem;
+  -webkit-box-ordinal-group: 101;
+  -ms-flex-order: 100;
+  order: 100;
+  margin-left: auto;
+  height: 100%;
+}
+.datagrid-table .datagrid-column .datagrid-column-separator::after {
+  content: '';
+  position: absolute;
+  height: calc(100% + 0.6rem - 0.05rem);
+  width: 0.05rem;
+  top: calc(-0.5 * 0.6rem + 0.05rem);
+  left: 0;
+  /* clr-table-border-color */
+  background-color: #495865;
+}
+.datagrid-table .datagrid-column .datagrid-column-separator .datagrid-column-handle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  position: absolute;
+  width: 0.65rem;
+  right: -0.3rem;
+  top: -0.3rem;
+  cursor: col-resize;
+  height: calc(100% + 0.6rem - 0.05rem);
+  z-index: 501;
+}
+button.datagrid-table .datagrid-column .datagrid-column-separator .datagrid-column-handle {
+  cursor: pointer;
+}
+
+.datagrid-table .datagrid-column .datagrid-column-separator .datagrid-column-resize-tracker {
+  position: absolute;
+  top: -0.6rem;
+  display: none;
+  width: 0.05rem;
+  height: 0;
+  border-right-style: dotted;
+  /* clr-color-action-300 */
+  border-right-color: #79c6e6;
+  /* clr-global-borderwidth */
+  border-right-width: 0.05rem;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+  cursor: col-resize;
+}
+.datagrid-table .datagrid-column .datagrid-column-separator .datagrid-column-resize-tracker.on-arrow-key-resize {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.datagrid-table .datagrid-column .datagrid-column-separator .exceeded-max {
+  border-right: 0.05rem dotted rgba(219, 33, 0, 0.3);
+}
+.datagrid-table .datagrid-column .datagrid-signpost-trigger .signpost {
+  margin: -0.36rem 0;
+  height: 1.236rem;
+}
+.datagrid-table .datagrid-column .datagrid-signpost-trigger .signpost .signpost-trigger {
+  height: inherit;
+  line-height: 1.2rem;
+}
+.datagrid-table .datagrid-column.datagrid-select,
+.datagrid-table .datagrid-column.datagrid-expandable-caret,
+.datagrid-table .datagrid-column.datagrid-row-actions {
+  max-width: 1.9rem;
+  min-width: 1.9rem;
+}
+.datagrid-table .datagrid-cell {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+  min-width: 4.8rem;
+  border: none;
+}
+.datagrid-table .datagrid-cell.datagrid-fixed-width {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.datagrid-table .datagrid-cell.datagrid-fixed-column {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 1.9rem;
+  flex: 0 0 1.9rem;
+  max-width: 1.9rem;
+  min-width: 1.9rem;
+}
+.datagrid-table .datagrid-cell.datagrid-row-actions {
+  background: none;
+}
+.datagrid-table .datagrid-cell.datagrid-expandable-caret {
+  padding: 0.1rem 0.2rem 0.15rem;
+  text-align: center;
+}
+.datagrid-table .datagrid-cell .datagrid-action-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  /* clr-datagrid-icon-color */
+  color: #acbac3;
+}
+button.datagrid-table .datagrid-cell .datagrid-action-toggle {
+  cursor: pointer;
+}
+
+.datagrid-table .datagrid-cell .datagrid-action-toggle:active {
+  /* clr-datagrid-action-toggle */
+  color: #acbac3;
+}
+.datagrid-table .datagrid-cell .clr-toggle-wrapper {
+  margin-top: -0.66rem;
+  padding-top: 0.42rem;
+}
+.datagrid-table .datagrid-placeholder-container {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-top-style: solid;
+  /* clr-table-border-color */
+  border-top-color: #495865;
+  /* clr-global-borderwidth */
+  border-top-width: 0.05rem;
+}
+.datagrid-table .datagrid-placeholder {
+  /* clr-table-bgcolor */
+  background: #21333b;
+  width: 100%;
+}
+.datagrid-table .datagrid-placeholder.datagrid-empty {
+  border-top: 0;
+  padding: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  /* clr-datagrid-placeholder-font-size */
+  font-size: 0.8rem;
+  /* clr-datagrid-placeholder-color */
+  color: #b3b3b3;
+}
+.datagrid-table .datagrid-placeholder .datagrid-placeholder-image {
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: 0.6rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%2060%2072%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cellipse%20id%3D%22path-1%22%20cx%3D%2230%22%20cy%3D%2261.7666667%22%20rx%3D%2215.4512904%22%20ry%3D%224.73333333%22%3E%3C%2Fellipse%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20maskContentUnits%3D%22userSpaceOnUse%22%20maskUnits%3D%22objectBoundingBox%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2230.9025808%22%20height%3D%229.46666667%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Artboard%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Oval-10%22%20stroke%3D%22%23C1DFEF%22%20mask%3D%22url(%23mask-2)%22%20stroke-width%3D%222.8%22%20stroke-linecap%3D%22square%22%20stroke-dasharray%3D%223%2C6%2C3%2C5%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M38.4613647%2C18.1642456%20L30.9890137%2C34.9141846%20L31%2C47%20L32.5977783%2C46.5167236%20L32.5977783%2C34.9141846%20L51.0673218%2C15.7560425%20C51.0673218%2C15.7560425%2048.6295166%2C16.6542969%2044.9628906%2C17.3392334%20C41.2962646%2C18.0241699%2038.4613647%2C18.1642456%2038.4613647%2C18.1642456%20Z%22%20id%3D%22Path-195%22%20fill%3D%22%23C1DFEF%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M4.74639226%2C12.5661855%20L4.62065726%2C12.1605348%20L5.3515414%2C11.1625044%20L5.77622385%2C11.159939%20L6.20936309%2C12.5573481%20L4.74639226%2C12.5661855%20Z%20M6.20936309%2C12.5573481%20L6.32542632%2C12.9317954%20L28.4963855%2C34.8796718%20L28.4963855%2C47.8096691%20L32.6%2C46.4836513%20L32.6%2C34.8992365%20L53.973494%2C12.7035813%20L53.973494%2C12.2688201%20L6.20936309%2C12.5573481%20Z%20M55.373494%2C10.8603376%20L55.373494%2C13.2680664%20L34%2C35.4637216%20L34%2C47.5025401%20L27.0963855%2C49.7333333%20L27.0963855%2C35.4637219%20L5.09179688%2C13.680542%20L4.31325301%2C11.1687764%20L55.373494%2C10.8603376%20Z%22%20id%3D%22Path-149%22%20fill%3D%22%237FBDDD%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cellipse%20id%3D%22Oval-9%22%20fill%3D%22%23FFFFFF%22%20cx%3D%2230%22%20cy%3D%2211.785654%22%20rx%3D%2226%22%20ry%3D%226.78565401%22%3E%3C%2Fellipse%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M30%2C17.171308%20C36.8772177%2C17.171308%2043.3112282%2C16.4610701%2048.0312371%2C15.2292106%20C50.2777611%2C14.6428977%2052.0507619%2C13.9579677%2053.2216231%2C13.2354973%20C54.1938565%2C12.6355886%2054.6%2C12.1175891%2054.6%2C11.785654%20C54.6%2C11.4537189%2054.1938565%2C10.9357194%2053.2216231%2C10.3358107%20C52.0507619%2C9.61334032%2050.2777611%2C8.92841034%2048.0312371%2C8.34209746%20C43.3112282%2C7.11023795%2036.8772177%2C6.4%2030%2C6.4%20C23.1227823%2C6.4%2016.6887718%2C7.11023795%2011.9687629%2C8.34209746%20C9.72223886%2C8.92841034%207.94923814%2C9.61334032%206.77837689%2C10.3358107%20C5.8061435%2C10.9357194%205.4%2C11.4537189%205.4%2C11.785654%20C5.4%2C12.1175891%205.8061435%2C12.6355886%206.77837689%2C13.2354973%20C7.94923814%2C13.9579677%209.72223886%2C14.6428977%2011.9687629%2C15.2292106%20C16.6887718%2C16.4610701%2023.1227823%2C17.171308%2030%2C17.171308%20Z%20M30%2C18.571308%20C15.6405965%2C18.571308%204%2C15.5332672%204%2C11.785654%20C4%2C8.03804078%2015.6405965%2C5%2030%2C5%20C44.3594035%2C5%2056%2C8.03804078%2056%2C11.785654%20C56%2C15.5332672%2044.3594035%2C18.571308%2030%2C18.571308%20Z%22%20id%3D%22Oval-9-Copy%22%20fill%3D%22%237FBDDD%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M18.2608643%2C7.14562988%20L22.727356%2C16.9047241%20C22.727356%2C16.9047241%2015.3006592%2C16.3911743%2010.276001%2C14.7511597%20C5.25134277%2C13.111145%205.38031006%2C11.8284302%205.38031006%2C11.6882935%20C5.38031006%2C10.4832831%208.16633152%2C9.41877716%2011.114563%2C8.57324219%20C14.549319%2C7.58817492%2018.2608643%2C7.14562988%2018.2608643%2C7.14562988%20Z%22%20id%3D%22Path-196%22%20fill%3D%22%23C1DFEF%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}
+.datagrid-table .datagrid-hidden-column.datagrid-column,
+.datagrid-table .datagrid-hidden-column.datagrid-cell {
+  display: none;
+}
+
+.datagrid-row-replaced
+  .datagrid-scrolling-cells
+  .datagrid-cell:not(.datagrid-expandable-caret):not(.datagrid-row-actions):not(.datagrid-select) {
+  display: none;
+}
+.datagrid-row-replaced .datagrid-row-detail .datagrid-cell {
+  display: block;
+  padding-top: 0.55rem;
+}
+.datagrid-row-replaced .datagrid-row-detail .datagrid-cell.datagrid-hidden-column {
+  display: none;
+}
+.datagrid-row-replaced .datagrid-row-detail .datagrid-expandable-caret {
+  padding-top: 0.1rem;
+}
+.datagrid-row-replaced .datagrid-row-detail.datagrid-container {
+  border-top: 0.05rem solid #495865;
+}
+.datagrid-row-replaced .datagrid-row-detail.datagrid-container .datagrid-cell {
+  border-top: none;
+}
+
+.datagrid-footer {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 0 0.6rem;
+  line-height: 1.65rem;
+  font-size: 0.55rem;
+  /* clr-thead-bgcolor */
+  background-color: #1b2a32;
+  border-style: solid;
+  /* clr-table-footer-border-top-color */
+  border-color: #495865;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  border-top: none;
+  border-radius: 0;
+  /* clr-global-borderradius */
+  border-bottom-right-radius: 0.15rem;
+  /* clr-global-borderradius */
+  border-bottom-left-radius: 0.15rem;
+}
+.datagrid-footer .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  line-height: 1.8rem;
+}
+.datagrid-footer .pagination-size {
+  display: block;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  text-align: right;
+}
+.datagrid-footer .pagination-size .clr-select-wrapper::after {
+  top: 0.6rem;
+}
+.datagrid-footer .pagination-size .clr-page-size-select {
+  font-size: 100%;
+  margin-left: 0.6rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  vertical-align: middle;
+}
+.datagrid-footer .pagination-size + .pagination-description {
+  margin-left: 1.2rem;
+}
+.datagrid-footer .pagination-description {
+  white-space: nowrap;
+}
+.datagrid-footer .pagination-list {
+  margin-left: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.datagrid-footer .column-switch-wrapper {
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.datagrid-footer .column-switch-wrapper.active .column-toggle--action {
+  /* clr-color-action-600 */
+  color: #0072a3;
+}
+.datagrid-footer .column-switch-wrapper .column-toggle--action {
+  min-width: 0.9rem;
+  padding-left: 0;
+  padding-right: 0;
+  /* clr-color-neutral-500 */
+  color: #b3b3b3;
+}
+.datagrid-footer .column-switch-wrapper .column-toggle--action:hover {
+  /* clr-color-action-600 */
+  color: #0072a3;
+}
+.datagrid-footer .column-switch-wrapper .column-switch {
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  /* clr-datagrid-popover-bg-color */
+  background-color: #21333b;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  padding: 0.9rem;
+  border-style: solid;
+  border-top: none;
+  width: 12.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1060;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding-bottom: 0.6rem;
+  line-height: 1.2rem;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-header button {
+  min-width: 0.9rem;
+  margin: 0;
+  padding: 0;
+  /* clr-color-neutral-500 */
+  color: #b3b3b3;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-header button:hover {
+  /* clr-color-action-600 */
+  color: #0072a3;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-content {
+  max-height: 15rem;
+  overflow-y: auto;
+  min-height: 2.4rem;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-content li {
+  line-height: 1.2rem;
+  padding-left: 0.1rem;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-footer .btn {
+  margin: 0;
+  padding: 0;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-footer .action-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.datagrid-footer .column-switch-wrapper .column-switch {
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  /* clr-datagrid-popover-bg-color */
+  background-color: #21333b;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  border-style: solid;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  padding: 0.9rem;
+  width: 12.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1060;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding-bottom: 0.6rem;
+  line-height: 1.2rem;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-header button {
+  min-width: 0.9rem;
+  margin: 0;
+  padding: 0;
+  /* clr-datagrid-column-switch-header-font-color */
+  color: #b3b3b3;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-header button:hover {
+  /* clr-datagrid-column-switch-header-font-hover-color */
+  color: #0072a3;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-content {
+  max-height: 15rem;
+  overflow-y: auto;
+  min-height: 1.25rem;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-content li {
+  line-height: 1.2rem;
+  padding-left: 0.1rem;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-footer .btn {
+  margin: 0;
+  padding: 0;
+}
+.datagrid-footer .column-switch-wrapper .column-switch .switch-footer .action-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.clr-form-control-disabled .datagrid-footer-select.clr-checkbox-wrapper input[type='checkbox']:checked + label {
+  top: 0.2rem;
+  cursor: default;
+  margin-right: 0.45rem;
+}
+.clr-form-control-disabled .datagrid-footer-select.clr-checkbox-wrapper input[type='checkbox']:checked + label::before {
+  /* clr-color-neutral-600 */
+  background-color: #8c8c8c;
+}
+.clr-form-control-disabled .datagrid-footer-select.clr-checkbox-wrapper input[type='checkbox']:checked + label::after {
+  /* clr-color-neutral-0 */
+  border-left-color: white;
+  /* clr-color-neutral-0 */
+  border-bottom-color: white;
+}
+
+.datagrid-spinner {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  top: 0.6rem;
+  height: calc(100% - 0.6rem);
+  /* clr-datagrid-loading-background */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 590;
+}
+
+.datagrid-select .clr-control-label {
+  min-height: 0.6rem;
+  margin-top: -0.24rem;
+  padding-left: 0.7rem;
+}
+
+.datagrid-compact .datagrid-header {
+  min-height: 1.2rem;
+}
+.datagrid-compact .datagrid-column .datagrid-column-separator::after {
+  height: calc(100% + 0.5 * 0.6rem - 0.05rem);
+  top: calc(-0.25 * 0.6rem + 0.05rem);
+}
+.datagrid-compact .datagrid-cell clr-icon {
+  margin-top: -0.2rem;
+  margin-bottom: -0.15rem;
+  -webkit-transform: translateY(-0.05rem);
+  transform: translateY(-0.05rem);
+}
+.datagrid-compact .datagrid-cell .badge {
+  margin-top: -0.15rem;
+  margin-bottom: -0.05rem;
+}
+.datagrid-compact .datagrid-expandable-caret {
+  text-align: center;
+}
+.datagrid-compact .datagrid-expandable-caret .spinner {
+  margin-top: 0.15rem;
+}
+.datagrid-compact .datagrid-expandable-caret .datagrid-expandable-caret-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  height: 1.2rem;
+  width: 1.2rem;
+  outline-offset: -0.2rem;
+}
+button.datagrid-compact .datagrid-expandable-caret .datagrid-expandable-caret-button {
+  cursor: pointer;
+}
+
+.datagrid-compact .datagrid-expandable-caret .datagrid-expandable-caret-icon {
+  margin: 0;
+}
+.datagrid-compact .datagrid-expandable-caret.datagrid-cell {
+  padding: 0;
+}
+.datagrid-compact .datagrid-expandable-caret.datagrid-column {
+  padding-top: 0.3rem;
+  padding-bottom: 0.25rem;
+}
+.datagrid-compact
+  .datagrid-signpost-trigger
+  .signpost
+  .signpost-trigger
+  clr-icon:not([shape='info-circle'], [shape='exclamation-triangle'], [shape='exclamation-circle'], [shape='check-circle'], [shape='info'], [shape='error']) {
+  height: 1.05rem;
+  width: 1.05rem;
+}
+.datagrid-compact .datagrid-footer {
+  padding: 0 0.6rem;
+  line-height: 1.15rem;
+}
+.datagrid-compact .datagrid-footer .pagination {
+  line-height: 1.2rem;
+}
+.datagrid-compact .datagrid-footer .column-switch-wrapper .column-toggle--action {
+  margin: 0;
+  outline-offset: -0.2rem;
+}
+.datagrid-compact
+  .datagrid-footer
+  .clr-form-control-disabled
+  .datagrid-footer-select.clr-checkbox-wrapper
+  input[type='checkbox']:checked
+  + label {
+  top: 0;
+}
+
+.datagrid-footer-description {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  display: block;
+  text-align: right;
+}
+
+.pagination-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.pagination-list .pagination-current {
+  background: none;
+  /* clr-forms-textarea-background-color */
+  background-color: #17242b;
+  /* clr-datagrid-pagination-input-border-color */
+  border-color: #495865;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  border-style: solid;
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  line-height: 1.2rem;
+  font-size: 0.55rem;
+  min-width: 1.2rem;
+  text-align: center;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+.pagination-list .pagination-current:focus,
+.pagination-list .pagination-current.clr-focus {
+  background: none;
+  border: 0.05rem solid;
+  /* clr-datagrid-pagination-input-border-focus-color */
+  border-color: #4aaed9;
+  -webkit-box-shadow: 0 0 0.05rem #4aaed9;
+  box-shadow: 0 0 0.05rem #4aaed9;
+  -webkit-box-shadow: 0 0 var(--clr-global-borderwidth, 0.05rem)
+    var(--clr-datagrid-pagination-input-border-focus-color, #4aaed9);
+  box-shadow: 0 0 var(--clr-global-borderwidth, 0.05rem)
+    var(--clr-datagrid-pagination-input-border-focus-color, #4aaed9);
+}
+.pagination-list > * {
+  padding: 0 0.12rem;
+}
+.pagination-list .pagination-first,
+.pagination-list .pagination-last,
+.pagination-list .pagination-previous,
+.pagination-list .pagination-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 0.7rem;
+  width: 0.7rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.pagination-list .pagination-first:disabled,
+.pagination-list .pagination-last:disabled,
+.pagination-list .pagination-previous:disabled,
+.pagination-list .pagination-next:disabled {
+  /* clr-datagrid-pagination-btn-disabled-color */
+  color: #eaedf0;
+  /* clr-datagrid-pagination-btn-disabled-opacity */
+  opacity: 0.56;
+}
+.pagination-list .pagination-first,
+.pagination-list .pagination-previous {
+  margin-right: 0.6rem;
+}
+.pagination-list .pagination-last,
+.pagination-list .pagination-next {
+  margin-left: 0.6rem;
+}
+.pagination-list button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  /* clr-datagrid-pagination-btn-color */
+  color: #eaedf0;
+  cursor: pointer;
+}
+button.pagination-list button {
+  cursor: pointer;
+}
+
+/*
+      The following classes are used by the renderer when performing internal operations.
+      Using the browser calculations improves rendering performance.
+  */
+.datagrid-cell-width-zero {
+  border: 0 !important;
+  padding: 0 !important;
+  width: 0;
+  -webkit-box-flex: 0 !important;
+  -ms-flex: 0 0 auto !important;
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  display: block !important;
+}
+
+/**
+ * Detail pane
+ */
+.datagrid-outer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.datagrid-inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: auto;
+  min-width: 12rem;
+}
+
+.datagrid-detail-open .datagrid {
+  border-top-right-radius: 0;
+  border-right: none;
+}
+.datagrid-detail-open .datagrid-inner-wrapper {
+  width: 34%;
+}
+.datagrid-detail-open .datagrid-placeholder-container,
+.datagrid-detail-open .datagrid-row {
+  border-right: 0.05rem solid #495865;
+}
+.datagrid-detail-open .datagrid-footer {
+  border-bottom-right-radius: 0;
+}
+.datagrid-detail-open .pagination {
+  width: 100%;
+}
+.datagrid-detail-open .pagination-description-compact {
+  text-align: left;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.datagrid-detail-open .datagrid-footer .pagination-list {
+  margin-right: 0;
+}
+
+.datagrid-row-detail-open {
+  position: relative;
+}
+.datagrid-row-detail-open:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border: 0.5rem solid transparent;
+  border-color: transparent;
+  /* clr-table-border-color */
+  border-right-color: #495865;
+  top: 0.5rem;
+  right: 0;
+}
+.datagrid-row-detail-open:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border: 0.45rem solid transparent;
+  /* clr-datagrid-popover-bg-color */
+  border-right-color: #21333b;
+  top: 0.55rem;
+  right: -0.05rem;
+}
+
+.datagrid-detail-pane {
+  margin-top: 0.6rem;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  border-style: solid;
+  /* clr-datagrid-default-border-color */
+  border-color: #495865;
+  border-left: none;
+  /* clr-global-borderradius */
+  border-top-right-radius: 0.15rem;
+  /* clr-global-borderradius */
+  border-bottom-right-radius: 0.15rem;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  overflow: hidden;
+  display: block;
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  width: 66%;
+}
+
+.datagrid-detail-pane-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+}
+
+.datagrid-detail-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0 1.2rem;
+}
+
+.datagrid-detail-header {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.68rem;
+  padding-left: 1.2rem;
+  margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.datagrid-detail-header .datagrid-detail-header-title {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-top: 0.8rem;
+}
+.datagrid-detail-header .datagrid-detail-pane-close {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 1.8rem;
+  flex: 1 1 1.8rem;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.datagrid-detail-header .datagrid-detail-pane-close .btn.btn-link {
+  /* clr-modal-close-color */
+  color: #acbac3;
+  margin-top: 0.8rem;
+  margin-bottom: 0;
+  padding-right: 0;
+}
+
+.datagrid-detail-caret {
+  padding: 0;
+  text-align: center;
+}
+.datagrid-detail-caret.datagrid-cell {
+  padding: 0.3rem 0.45rem;
+}
+.datagrid-detail-caret .datagrid-detail-caret-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.1rem 0.2rem 0.15rem;
+}
+button.datagrid-detail-caret .datagrid-detail-caret-button {
+  cursor: pointer;
+}
+
+.datagrid-detail-caret .datagrid-detail-caret-button.is-open {
+  /* clr-datagrid-detail-caret-icon-open-bg-color */
+  background-color: #0072a3;
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+}
+.datagrid-detail-caret .datagrid-detail-caret-button.is-open .datagrid-detail-caret-icon {
+  /* clr-datagrid-detail-caret-icon-open-icon-color */
+  color: white;
+}
+.datagrid-detail-caret .datagrid-detail-caret-icon {
+  /* clr-datagrid-icon-color */
+  color: #acbac3;
+  margin-top: 0.1rem;
+}
+.datagrid-detail-caret .spinner {
+  margin-top: 0.3rem;
+}
+.datagrid-detail-caret.datagrid-column {
+  padding: 0.55rem 0.6rem 0.55rem;
+}
+
+.datagrid-detail-overlay.datagrid-detail-open > .datagrid-outer-wrapper > .datagrid-inner-wrapper {
+  display: none;
+}
+.datagrid-detail-overlay .datagrid-detail-pane {
+  border-left: 0.05rem solid #495865;
+  border-radius: 0.15rem;
+}
+
+@media screen and (max-width: 576px) {
+  .datagrid-detail-open > .datagrid-outer-wrapper > .datagrid-inner-wrapper {
+    display: none;
+  }
+
+  .datagrid-detail-pane {
+    border-left: 0.05rem solid #495865;
+    border-radius: 0.15rem;
+  }
+}
+/**
+ * Smart popover contents
+ */
+.column-switch {
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  padding: 0.9rem;
+  /* clr-datagrid-popover-bg-color */
+  background-color: #21333b;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  border-style: solid;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  width: 12.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1060;
+}
+.column-switch .switch-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding-bottom: 0.6rem;
+  line-height: 1.2rem;
+}
+.column-switch .switch-header button {
+  min-width: 0.9rem;
+  margin: 0;
+  padding: 0;
+  /* clr-datagrid-column-switch-header-font-color */
+  color: #b3b3b3;
+}
+.column-switch .switch-header button:hover {
+  /* clr-datagrid-column-switch-header-font-hover-color */
+  color: #0072a3;
+}
+.column-switch .switch-content {
+  max-height: 15rem;
+  overflow-y: auto;
+  min-height: 1.25rem;
+}
+.column-switch .switch-content li {
+  line-height: 1.2rem;
+  padding-left: 0.1rem;
+}
+.column-switch .switch-footer .btn {
+  margin: 0;
+  padding: 0;
+}
+.column-switch .switch-footer .action-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.datagrid-filter {
+  margin-top: 0.24rem;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  border-style: solid;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  padding: 0.9rem;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  font-weight: normal;
+}
+.datagrid-filter .datagrid-filter-close-wrapper {
+  text-align: right;
+}
+.datagrid-filter .datagrid-filter-close-wrapper .close {
+  float: none;
+}
+.datagrid-filter .datagrid-filter-apply {
+  margin-bottom: 0;
+}
+
+.datagrid-action-overflow {
+  position: absolute;
+  /* clr-datagrid-popover-bg-color */
+  background: #21333b;
+  padding: 0.3rem;
+  margin-left: 0.3rem;
+  /* clr-global-borderwidth */
+  border-width: 0.05rem;
+  border-style: solid;
+  /* clr-datagrid-popover-border-color */
+  border-color: black;
+  -webkit-box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  box-shadow: 0 0.05rem 0.15rem rgba(140, 140, 140, 0.25);
+  -webkit-box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  /* clr-global-borderradius */
+  border-radius: 0.15rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+.datagrid-action-overflow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  margin-top: -0.3rem;
+  border: 0.3rem solid transparent;
+  border-left: 0 none;
+  /* clr-datagrid-popover-border-color */
+  border-right-color: black;
+}
+.datagrid-action-overflow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 0;
+  height: 0;
+  margin-top: -0.25rem;
+  border-right: 0.25rem solid #21333b;
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+}
+.datagrid-action-overflow .action-item {
+  /* clr-dropdown-text-color */
+  color: #acbac3;
+  font-size: 0.7rem;
+  letter-spacing: normal;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 1.15rem;
+  margin: 0;
+  padding: 0.05rem 1.2rem 0;
+  text-align: left;
+  width: 100%;
+}
+.datagrid-action-overflow .action-item:hover,
+.datagrid-action-overflow .action-item:focus {
+  text-decoration: none;
+  /* clr-datagrid-action-popover-hover-color */
+  background-color: #28404d;
+}
+.datagrid-action-overflow .action-item.active {
+  /* clr-datagrid-row-hover */
+  background-color: #28404d;
+  /* clr-datagrid-row-hover-font-color */
+  color: black;
+}
+.datagrid-action-overflow .action-item:focus {
+  outline: 0;
+}
+.datagrid-action-overflow .action-item.disabled,
+.datagrid-action-overflow .action-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.datagrid-action-overflow .action-item.disabled:hover,
+.datagrid-action-overflow .action-item:disabled:hover {
+  background: none;
+}
+.datagrid-action-overflow .action-item.disabled:active,
+.datagrid-action-overflow .action-item.disabled:focus,
+.datagrid-action-overflow .action-item:disabled:active,
+.datagrid-action-overflow .action-item:disabled:focus {
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.datagrid-action-overflow .action-item clr-icon {
+  vertical-align: middle;
+  -webkit-transform: translate3d(0px, -1px, 0);
+  transform: translate3d(0px, -1px, 0);
+}
+
+/* END Datagrid Smart Popover Content Styles
+
+/**
+ * These classes are used in table-renderer.ts when it puts the datagrid into in tableMode and computes column
+ * widths. NOTE: they are only applied during calculation and then removed.
+ */
+/**
+ * When in calculate mode
+ * - Hide the display elements for datagrid
+ * - Switch display mode for elements with projected content to calcualte sizes.
+ */
+.datagrid-host.datagrid-calculate-mode {
+  display: block;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid,
+.datagrid-host.datagrid-calculate-mode .datagrid-footer,
+.datagrid-host.datagrid-calculate-mode .datagrid-row-master,
+.datagrid-host.datagrid-calculate-mode .datagrid-row-clickable {
+  display: none;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-calculation-table {
+  display: table;
+  table-layout: auto;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-calculation-table .datagrid-calculation-header {
+  display: table-header-group;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-calculation-table .datagrid-calculation-header .datagrid-column {
+  display: table-cell;
+  min-width: 4.8rem;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-calculation-table .datagrid-calculation-header .datagrid-column {
+  /* clr-tablerow-bordercolor */
+  border-color: #495865;
+  /* clr-table-borderwidth */
+  border-width: 0.05rem;
+  border-style: solid;
+  padding: 0.55rem 0.6rem 0.55rem;
+  vertical-align: top;
+  /* clr-p6-color */
+  color: #eaedf0;
+  /* clr-font-weight-bold */
+  font-weight: 600;
+  font-size: 0.55rem;
+  letter-spacing: 0.03em;
+  line-height: 0.6rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-calculation-table .datagrid-row {
+  display: table-row;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-calculation-table .datagrid-row .datagrid-cell {
+  display: table-cell;
+  min-width: 4.8rem;
+  font-size: 0.65rem;
+  line-height: 0.7rem;
+  padding: 0.55rem 0.6rem 0.55rem;
+  vertical-align: top;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-column-separator {
+  display: none;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-placeholder-container {
+  display: none;
+}
+.datagrid-host.datagrid-calculate-mode .datagrid-fixed-column {
+  display: none;
+}
