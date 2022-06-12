@@ -1,11 +1,14 @@
 import react from '@vitejs/plugin-react';
 import {resolve} from 'path'; // Need to install @types/node"
 import {visualizer} from 'rollup-plugin-visualizer';
-import {defineConfig} from 'vite';
 import svgrPlugin from 'vite-plugin-svgr';
+import {defineConfig} from 'vitest/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {
+    environment: 'happy-dom', // or 'jsdom', 'node'
+  },
   plugins: [
     react(),
     svgrPlugin({
