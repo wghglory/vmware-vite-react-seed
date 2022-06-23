@@ -1,3 +1,4 @@
+import {nodeResolve} from '@rollup/plugin-node-resolve';
 import react from '@vitejs/plugin-react';
 import {resolve} from 'path'; // Need to install @types/node"
 import {visualizer} from 'rollup-plugin-visualizer';
@@ -54,6 +55,7 @@ export default defineConfig({
   build: {
     sourcemap: false,
     rollupOptions: {
+      plugins: [nodeResolve()],
       // https://rollupjs.org/guide/en/#big-list-of-options
       output: {
         // manualChunks: {'react-flow-renderer': ['react-flow-renderer']},
