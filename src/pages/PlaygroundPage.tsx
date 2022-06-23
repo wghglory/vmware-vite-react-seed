@@ -1,12 +1,12 @@
 import {CdsButton} from '@cds/react/button';
 import {
+  Card,
   CardBlock,
   CardFooter,
   CardFooterAction,
   CardHeader,
   CardText,
   CardTitle,
-  CoreCard,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -35,7 +35,7 @@ export default function PlaygroundPage() {
       <p className="text-red-500">Tailwind color</p>
       <p>{l10n('common.back')}</p>
       <p>{formatDate(new Date(), 'MMMM d, y, h:mm:ss a')}</p>
-      <CoreCard>
+      <Card>
         <CardHeader>Header</CardHeader>
         <CardBlock>
           <CardTitle>Card content can contain text, links, images, lists and more.</CardTitle>
@@ -56,7 +56,7 @@ export default function PlaygroundPage() {
             </DropdownMenu>
           </Dropdown>
         </CardFooter>
-      </CoreCard>
+      </Card>
     </header>
   );
 }
