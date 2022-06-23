@@ -16,6 +16,8 @@
     "@cds/city": "^1.1.0",
     "@cds/core": "^6.0.3",
     "@cds/react": "^6.0.3",
+    "@clr/icons": "^13.0.2",
+    "@clr/ui": "^13.4.2",
     "@singleton-i18n/js-core-sdk": "^0.5.2",
     "@tmc/clr-react": "^0.10.3",
     "@typescript-eslint/eslint-plugin": "^5.27.1",

@@ -276,6 +276,16 @@
     "@cds/city" "^1.1.0"
     modern-normalize "^1.1.0"
 
+"@clr/icons@^13.0.2":
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@clr/icons/-/icons-13.0.2.tgz#600b530fe8e0d654de81f97d2b64db5905266eb6"
+  integrity sha512-bdcSuFvQAbIIp8Q2Fm55BjHW5cawP4xEOkZf2IEIin0d9ViRcAJNjACBCOMDhx2up7nPZsXwN2gL8zJhL7TSZQ==
+
+"@clr/ui@^13.4.2":
+  version "13.4.2"
+  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-13.4.2.tgz#7f23e9f5b1f42fa6522f87efa1caf8c0c8326ca2"
+  integrity sha512-uA87r9WBRtzFxRvj9SB/pYbC9ypivh5WCPUcEILVvM+Lu1EC+ayodxudIUKbCQxPydn4zyCf7S7F7R72oZZHLA==
+
 "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"

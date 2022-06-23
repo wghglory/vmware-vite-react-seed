@@ -1,8 +1,12 @@
 /* NOTE: cannot import global.min.css and module.shims.min.css due to build error */
-@import '../node_modules/@cds/core/global.min.css';
-@import '../node_modules/@cds/city/css/bundles/default.min.css';
+@import '../node_modules/@cds/core/global.css';
 @import '../node_modules/@cds/core/styles/theme.dark.css';
 @import '../node_modules/@cds/core/table/table.min';
+
+/* Order is important here. */
+@import '../node_modules/@cds/city/css/bundles/default.css';
+@import '../node_modules/@cds/core/styles/shim.clr-ui.css';
+@import '../node_modules/@clr/ui/clr-ui.css';
 
 @import '../node_modules/@tmc/clr-react/styles/clr-react.css';
 
