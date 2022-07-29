@@ -6,6 +6,7 @@ import RequireAuth from '@/core/components/RequireAuth';
 import {RoutePath} from '@/core/const/routePath';
 
 import DashboardPage from './pages/DashboardPage';
+import DatagridPage from './pages/DatagridPage';
 import HomePage from './pages/HomePage';
 import NoAccessPage from './pages/NoAccessPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -48,6 +49,7 @@ function App() {
         </Route>
 
         <Route path={RoutePath.signIn} element={<SignInPage />} />
+        <Route path={'/datagrid'} element={<DatagridPage />} />
       </Routes>
     </>
   );
