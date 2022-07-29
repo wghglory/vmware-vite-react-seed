@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@cds/city": "^1.1.0",
-    "@cds/core": "^6.0.3",
-    "@cds/react": "^6.0.3",
+    "@cds/core": "6.1.0",
+    "@cds/react": "6.1.0",
     "@singleton-i18n/js-core-sdk": "^0.5.2",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
