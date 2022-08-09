@@ -10,26 +10,27 @@
     "preview": "vite preview",
     "fix": "npx eslint --fix --ext .js,.ts,.tsx .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(vue|js|jsx|ts|tsx|json|css|scss|md|html)\"",
-    "postinstall": "cd src/server && yarn"
+    "postinstall": "cd src/server && npm i"
   },
   "dependencies": {
     "@cds/city": "^1.1.0",
     "@cds/core": "6.1.0",
     "@cds/react": "6.1.0",
-    "@singleton-i18n/js-core-sdk": "^0.5.2",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "@typescript-eslint/parser": "^5.27.1",
+    "@singleton-i18n/js-core-sdk": "^0.5.4",
+    "@tanstack/react-query": "^4.0.10",
+    "@tanstack/react-query-devtools": "^4.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
-    "framer-motion": "^6.3.11",
+    "framer-motion": "^7.0.0",
     "lodash-es": "^4.17.21",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-query": "^3.39.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-toastify": "^9.0.4",
+    "react-toastify": "^9.0.8",
     "react-use": "^17.4.0",
-    "recoil": "^0.7.3"
+    "recoil": "^0.7.4"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",
@@ -48,13 +49,13 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "postcss": "^8.4.14",
-    "prettier": "^2.6.2",
-    "prettier-plugin-tailwindcss": "^0.1.11",
-    "rollup-plugin-visualizer": "^5.6.0",
-    "tailwindcss": "^3.1.2",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "rollup-plugin-visualizer": "^5.7.1",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.6.3",
-    "vite": "^2.9.12",
-    "vite-plugin-svgr": "^2.1.0"
+    "vite": "^3.0.4",
+    "vite-plugin-svgr": "^2.2.1"
   }
 }

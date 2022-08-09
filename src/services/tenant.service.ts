@@ -1,6 +1,6 @@
+import {useQuery, useQueryClient} from '@tanstack/react-query';
 import {AxiosResponse} from 'axios';
 import {useEffect} from 'react';
-import {useMutation, useQuery, useQueryClient} from 'react-query';
 
 import {generatePageQueryString, PageModel, PageQuery, Tenant} from '@/models';
 import http from '@/utils/axios';

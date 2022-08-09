@@ -14,7 +14,7 @@ const tenants: Tenant[] = [
 const data = new Array(45).fill(1).map(i => {
   return {
     id: faker.datatype.uuid(),
-    name: faker.company.companyName(),
+    name: faker.company.name(),
     fullName: faker.name.firstName(),
     enabled: Math.random() < 0.5,
     lastModifiedDate: faker.date.past().toDateString(),
