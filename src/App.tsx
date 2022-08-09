@@ -27,7 +27,7 @@ function App() {
           <Route
             path={RoutePath.dashboard}
             element={
-              <RequireAuth roles={['PROVIDER_ADMIN']}>
+              <RequireAuth roles={['System Administrator']}>
                 <DashboardPage />
               </RequireAuth>
             }
@@ -36,7 +36,7 @@ function App() {
           <Route
             path={RoutePath.tenantHome}
             element={
-              <RequireAuth roles={['TENANT_USER', 'TENANT_ADMIN']}>
+              <RequireAuth roles={['Organization Administrator', 'Organization User']}>
                 <TenantPage />
               </RequireAuth>
             }
@@ -46,10 +46,10 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
 
           <Route path="/play" element={<PlaygroundPage />} />
+          <Route path={'/datagrid'} element={<DatagridPage />} />
         </Route>
 
         <Route path={RoutePath.signIn} element={<SignInPage />} />
-        <Route path={'/datagrid'} element={<DatagridPage />} />
       </Routes>
     </>
   );

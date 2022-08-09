@@ -1,9 +1,8 @@
 const common = {
-  'common.product': 'Global Catalog',
-  'common.productSubtitle': 'OSE team come on',
+  'common.product': 'PRODUCT',
+  'common.productSubtitle': 'vCD plugin team react UI',
   'common.productDesc':
-    'Global Catalog allows you to manage and consume applications uniformly for your multiple geolocation cloud points. It gives both cloud providers and customer organizations more flexibility to optimize performance, control costs, and leverage the best cloud technologies to enable app centric platforms.',
-  'common.productShort': 'GC',
+    'This product allows you to manage and consume applications uniformly for your multiple geolocation cloud points. It gives both cloud providers and customer organizations more flexibility to optimize performance, control costs, and leverage the best cloud technologies to enable app centric platforms.',
   'common.retry': 'Retry',
   'common.selectAll': 'Select All',
   'common.confirm': 'Confirm',
@@ -41,6 +40,7 @@ const auth = {
   'auth.token': 'Token',
   'auth.logout': 'Logout',
   'auth.checkingUserInfo': 'Checking user information...',
+  'auth.failLogin': 'Failed to login',
 };
 
 const tenant = {

@@ -5,7 +5,7 @@ import {useClickAway} from 'react-use';
 import {RoutePath} from '@/core/const/routePath';
 import {useAuth} from '@/core/context/AuthContext';
 
-import {User} from '../models/user';
+import {User, VcdSession} from '../models/user';
 import ThemeSwitcher from './ThemeSwitcher';
 
 const TheNav = () => {
@@ -63,7 +63,7 @@ const TheNav = () => {
                     d="M5.007 11.969c-.793 0-1.567.236-2.226.678a4.021 4.021 0 00-1.476 1.807 4.042 4.042 0 00.869 4.386 4.001 4.001 0 004.366.873 4.011 4.011 0 001.798-1.483 4.038 4.038 0 00-.5-5.08 4.004 4.004 0 00-2.831-1.181z"
                   />
                 </svg>
-                <span className="text-xl text-gray-100">Global Catalog</span>
+                <span className="text-xl text-gray-100">PRODUCT</span>
               </Link>
             </h1>
             <nav className="hidden h-full md:block">
@@ -94,7 +94,7 @@ const TheNav = () => {
                     className="ml-4 text-sm font-medium capitalize text-gray-300"
                     onClick={() => setShowProfileMenu(!showProfileMenu)}
                   >
-                    {user.name}
+                    {user?.user}
                   </button>
                 )}
 
@@ -191,8 +191,8 @@ const TheNav = () => {
         <div className="border-t border-gray-700 pt-4 pb-3">
           <div className="flex items-center justify-center px-5">
             <div className="">
-              <div className="text-base font-medium capitalize leading-none text-white">{user?.name}</div>
-              <div className="text-sm font-medium leading-none text-gray-400">{user?.email}</div>
+              <div className="text-base font-medium capitalize leading-none text-white">{user?.user}</div>
+              <div className="text-sm font-medium leading-none text-gray-400">{user?.userId}</div>
             </div>
           </div>
           <div className="mt-3 space-y-1 px-2">
@@ -217,13 +217,19 @@ const TheNav = () => {
 
 export default TheNav;
 
-function generateNavLinks(user: User | null) {
+function generateNavLinks(user: VcdSession | null) {
   if (!user) return null;
 
-  if (user.role === 'PROVIDER_ADMIN') {
-    return [{text: 'Home', to: RoutePath.dashboard}];
+  if (user.roles === 'System Administrator') {
+    return [
+      {text: 'Home', to: RoutePath.dashboard},
+      {text: 'Datagrid', to: 'datagrid'},
+    ];
   }
-  if (user.role === 'TENANT_USER' || user.role === 'TENANT_ADMIN') {
-    return [{text: 'Home', to: RoutePath.tenantHome}];
+  if (user.roles === 'Organization Administrator' || user.roles === 'Organization User') {
+    return [
+      {text: 'Home', to: RoutePath.tenantHome},
+      {text: 'Datagrid', to: 'datagrid'},
+    ];
   }
 }

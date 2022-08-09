@@ -65,9 +65,15 @@ export default function SignInPage() {
             </CdsAlertGroup>
           )}
 
+          {status === 'error' && (
+            <CdsAlertGroup status="danger" className="mt-6" aria-label="Fail to login">
+              <CdsAlert closable={false}>{l10n('auth.failLogin')}</CdsAlert>
+            </CdsAlertGroup>
+          )}
+
           <CdsButton
             className="mt-6"
-            disabled={status === 'loading' || formInvalid}
+            disabled={formInvalid}
             loadingState={status === 'loading' ? 'loading' : 'default'}
             type="submit"
           >

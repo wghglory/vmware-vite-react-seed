@@ -1,9 +1,9 @@
 import {ACCESS_TOKEN} from '../const';
-import {User} from '../models/user';
+import {User, VcdSession} from '../models/user';
 
 export interface AuthState {
   status: 'default' | 'loading' | 'success' | 'error';
-  user: User | null;
+  user: VcdSession | null;
   error: Error | null;
   token: string;
 }

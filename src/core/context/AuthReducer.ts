@@ -1,6 +1,6 @@
 import {Action} from '@/models';
 
-import {User} from '../models/user';
+import {User, VcdSession} from '../models/user';
 import {AuthState} from './AuthState';
 
 export const AuthActionTypes = {
@@ -13,7 +13,7 @@ export const AuthActionTypes = {
   SignOut: 'auth/SignOut',
 } as const; // const are valuable
 
-export function authReducer(state: AuthState, action: Action<typeof AuthActionTypes, User>): AuthState {
+export function authReducer(state: AuthState, action: Action<typeof AuthActionTypes, VcdSession>): AuthState {
   switch (action.type) {
     case AuthActionTypes.SignInInit:
       return {

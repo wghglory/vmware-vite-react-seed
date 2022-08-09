@@ -5,9 +5,9 @@ export enum RoutePath {
   noAccess = '/no-access',
   notFound = '*',
 
-  // system operator, PA
+  // PA
   dashboard = '/dashboard',
 
   // tenant
-  tenantHome = '/tenant/home',
+  tenantHome = '/home',
 }

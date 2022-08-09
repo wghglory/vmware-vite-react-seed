@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {RoutePath} from '@/core/const/routePath';
 import {useAuth} from '@/core/context/AuthContext';
 import {l10n} from '@/i18n/i18nUtils';
+import http from '@/utils/axios';
 
 const HomePage = () => {
   const {user} = useAuth();

@@ -1,10 +1,18 @@
 import {CdsButtonAction} from '@cds/react/button-action';
 import {CdsGrid, CdsGridCell, CdsGridColumn, CdsGridFooter, CdsGridRow} from '@cds/react/grid';
 import {CdsRadio} from '@cds/react/radio';
+import {useQuery} from '@tanstack/react-query';
+
+import PageContainer from '@/components/common/PageContainer';
+import http from '@/utils/axios';
 
 export default function DatagridPage() {
+  const query = useQuery(['test-vcd-rde-API'], () =>
+    http.get('entities/types/vmware/dsConfig/0.1.0?pageSize=999&page=1&filter=state==RESOLVED'),
+  );
+
   return (
-    <div className="p-10">
+    <PageContainer title="Datagrid Page" className="space-y-8">
       <CdsGrid selectable="single">
         <CdsGridColumn type="action"></CdsGridColumn>
         <CdsGridColumn type="action"></CdsGridColumn>
@@ -72,6 +80,6 @@ export default function DatagridPage() {
 
         <CdsGridFooter></CdsGridFooter>
       </CdsGrid>
-    </div>
+    </PageContainer>
   );
 }

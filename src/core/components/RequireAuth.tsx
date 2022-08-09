@@ -37,7 +37,7 @@ export default function RequireAuth({roles, children}: {roles: Role[]; children:
   }
 
   // if user role is not enough, kick to access
-  if (!roles.includes(user.role)) {
+  if (!roles.includes(user.roles as Role)) {
     // user role doesn't match route path,
     // e.g. normal user accessed admin-only page. 403
     return <Navigate to={RoutePath.noAccess} />;

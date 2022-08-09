@@ -1,6 +1,7 @@
 import axios, {AxiosError, AxiosRequestConfig} from 'axios';
 
-import {ACCESS_TOKEN} from '@/core/const';
+import {ACCESS_TOKEN, API_ACCEPT} from '@/core/const';
+import {RoutePath} from '@/core/const/routePath';
 
 const http = axios.create({
   // https://github.com/vitejs/vite/issues/1149 Jest testing issues.
@@ -10,24 +11,29 @@ const http = axios.create({
 });
 
 function vCDRequestInterceptor(config: AxiosRequestConfig) {
-  const requestConfig: AxiosRequestConfig = {...config};
+  config.headers = {
+    ...config.headers,
+    Accept: API_ACCEPT,
+  };
 
   // except signIn API, all other API request header needs token
-  if (!isSignInRequest(requestConfig)) {
+  if (!isSignInRequest(config)) {
     const token = localStorage.getItem(ACCESS_TOKEN);
     if (token) {
-      requestConfig.headers = {
+      config.headers = {
         ...config.headers,
-        Authorization: `Bearer ${token}`,
+        'x-vcloud-authorization': localStorage.getItem(ACCESS_TOKEN) || '',
       };
     }
   }
 
-  return requestConfig;
+  return config;
 }
 
 function isSignInRequest(req: AxiosRequestConfig) {
-  return req.method?.localeCompare('post', undefined, {sensitivity: 'base'}) === 0 && req.url === '/session';
+  return (
+    req.method?.localeCompare('post', undefined, {sensitivity: 'base'}) === 0 && req.url?.includes('/api/sessions')
+  );
 }
 
 http.interceptors.request.use(vCDRequestInterceptor, error => {
@@ -49,7 +55,7 @@ http.interceptors.response.use(
       const {response} = error as AxiosError;
       switch (response?.status) {
         case 401:
-          // TODO: For CDS only, window.location.href = '/'. may need a timer to delay redirection; CPN will refresh token
+          window.location.href = window.location.origin + RoutePath.signIn;
           break;
         default:
           break;

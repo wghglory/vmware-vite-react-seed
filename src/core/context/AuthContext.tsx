@@ -1,15 +1,14 @@
+import axios from 'axios';
 import {createContext, useCallback, useContext, useEffect, useMemo, useReducer} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 
-import http from '@/utils/axios';
-
-import {ACCESS_TOKEN} from '../const';
+import {ACCESS_TOKEN, API_ACCEPT, X_VCLOUD_AUTHORIZATION} from '../const';
 import {RoutePath} from '../const/routePath';
-import {SignInPayload, SignInResponse, User} from '../models/user';
+import {SignInPayload, SignInResponse, User, VcdSession} from '../models/user';
 import {AuthActionTypes, authReducer} from './AuthReducer';
 import {AuthState, initialState} from './AuthState';
 
-// TODO: I think value here is for debugging only.
+// TODO: I think value here is for debugging/testing only.
 export function AuthProvider({children, value}: {children: React.ReactNode; value?: AuthState}) {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
@@ -18,7 +17,12 @@ export function AuthProvider({children, value}: {children: React.ReactNode; valu
 
   const signOut = useCallback(async () => {
     try {
-      await http.delete('/session');
+      await axios.delete(`${import.meta.env.VITE_APP_HOST}/api/session`, {
+        headers: {
+          Accept: API_ACCEPT,
+          'x-vcloud-authorization': localStorage.getItem(ACCESS_TOKEN) || '',
+        },
+      });
 
       localStorage.removeItem(ACCESS_TOKEN);
 
@@ -34,20 +38,31 @@ export function AuthProvider({children, value}: {children: React.ReactNode; valu
       try {
         dispatch({type: AuthActionTypes.SignInInit});
 
-        const {data: user, headers} = await http.post<SignInResponse>('/session', payload);
+        const {data, headers} = await axios.post<VcdSession>(
+          `${import.meta.env.VITE_APP_HOST}/api/sessions`,
+          {},
+          {
+            headers: {
+              Accept: API_ACCEPT,
+            },
+            auth: {
+              ...payload,
+            },
+          },
+        );
 
-        const token = user.token; // headers[ACCESS_TOKEN];
+        const token = headers[X_VCLOUD_AUTHORIZATION]; // headers[ACCESS_TOKEN];
         localStorage.setItem(ACCESS_TOKEN, token);
 
         dispatch({
           type: AuthActionTypes.SignInSuccess,
-          payload: {...user, id: user.username},
+          payload: data,
           meta: {token},
         });
 
-        const defaultPath = ['PROVIDER_ADMIN'].includes(user.role)
+        const defaultPath = ['System Administrator'].includes(data.roles)
           ? RoutePath.dashboard
-          : ['TENANT_USER', 'TENANT_ADMIN'].includes(user.role)
+          : ['Organization Administrator', 'Organization User'].includes(data.roles)
           ? RoutePath.tenantHome
           : '/';
 
@@ -59,19 +74,23 @@ export function AuthProvider({children, value}: {children: React.ReactNode; valu
         dispatch({type: AuthActionTypes.SignInFailure, error: error.data});
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [location, navigate],
-  ); // TODO: navigate will make function not unique... ADD navigate back to deps. VERIFY ANY BUG?
+  );
 
   const getUser = useCallback(async (token: string) => {
     try {
       dispatch({type: AuthActionTypes.GetCurrentUserInit, meta: {token}});
 
-      const {data: user} = await http.get<User>('/current-user');
+      const {data} = await axios.get<VcdSession>(`${import.meta.env.VITE_APP_HOST}/api/session`, {
+        headers: {
+          Accept: API_ACCEPT,
+          'x-vcloud-authorization': token,
+        },
+      });
 
       dispatch({
         type: AuthActionTypes.GetCurrentUserSuccess,
-        payload: user,
+        payload: data,
         meta: {token},
       });
     } catch (error: any) {
@@ -85,7 +104,64 @@ export function AuthProvider({children, value}: {children: React.ReactNode; valu
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // same issue, cannot include navigate...
+  }, []); // exclude navigate, otherwise getUser will be different and call many times when switching components.
+
+  // const signIn = useCallback(
+  //   async (payload: SignInPayload) => {
+  //     try {
+  //       dispatch({type: AuthActionTypes.SignInInit});
+
+  //       const {data: user, headers} = await http.post<SignInResponse>('/session', payload);
+
+  //       const token = user.token; // headers[ACCESS_TOKEN];
+  //       localStorage.setItem(ACCESS_TOKEN, token);
+
+  //       dispatch({
+  //         type: AuthActionTypes.SignInSuccess,
+  //         payload: {...user, id: user.username},
+  //         meta: {token},
+  //       });
+
+  //       const defaultPath = ['PROVIDER_ADMIN'].includes(user.role)
+  //         ? RoutePath.dashboard
+  //         : ['TENANT_USER', 'TENANT_ADMIN'].includes(user.role)
+  //         ? RoutePath.tenantHome
+  //         : '/';
+
+  //       // (location.state as any)?.from means user accessed protected pages, but probably token expires
+  //       const from = (location.state as any)?.from || defaultPath; // usually we jump to /
+
+  //       navigate(from, {replace: true});
+  //     } catch (error: any) {
+  //       dispatch({type: AuthActionTypes.SignInFailure, error: error.data});
+  //     }
+  //   },
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   [location, navigate],
+  // ); // TODO: navigate will make function not unique... ADD navigate back to deps. VERIFY ANY BUG?
+
+  // const getUser = useCallback(async (token: string) => {
+  //   try {
+  //     dispatch({type: AuthActionTypes.GetCurrentUserInit, meta: {token}});
+
+  //     const {data: user} = await http.get<User>('/current-user');
+
+  //     dispatch({
+  //       type: AuthActionTypes.GetCurrentUserSuccess,
+  //       payload: user,
+  //       meta: {token},
+  //     });
+  //   } catch (error: any) {
+  //     navigate(RoutePath.signIn);
+
+  //     localStorage.removeItem(ACCESS_TOKEN);
+
+  //     dispatch({
+  //       type: AuthActionTypes.GetCurrentUserFailure,
+  //       error: error.data,
+  //     });
+  //   }
+  // }, []); // same issue, cannot include navigate...
 
   useEffect(() => {
     // if there's a token, get current user
@@ -96,7 +172,6 @@ export function AuthProvider({children, value}: {children: React.ReactNode; valu
   const {user, status, error, token} = state;
 
   const v = useMemo(
-    // TODO: remove ...value?
     () => ({user, status, error, token, ...value, signOut, signIn, getUser}),
     [user, status, error, token, value, signOut, signIn, getUser],
   );
