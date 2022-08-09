@@ -39,7 +39,7 @@ export default defineConfig({
     proxy: {
       // common usage
       '/api/v1': {
-        target: 'http://localhost:4000', // mock
+        target: 'http://localhost:3000', // mock
         changeOrigin: true,
         secure: false, // [vite] http proxy error: Error: self signed certificate in certificate chain
         // rewrite: (path) => path.replace(/^\/api/, ''),
@@ -47,14 +47,14 @@ export default defineConfig({
       // api/sessions POST, api/session GET
       '/api/session': {
         // target: 'http://localhost:3000', // mock
-        target: 'https://alp-vcd103.eng.vmware.com', // mock
+        target: 'https://alp-vcd103.eng.vmware.com',
         changeOrigin: true,
         secure: false, // [vite] http proxy error: Error: self signed certificate in certificate chain
         // rewrite: (path) => path.replace(/^\/api/, ''),
       },
       '/cloudapi/': {
         // target: 'http://localhost:3000', // mock
-        target: 'https://alp-vcd103.eng.vmware.com', // mock
+        target: 'https://alp-vcd103.eng.vmware.com',
         changeOrigin: true,
         secure: false, // [vite] http proxy error: Error: self signed certificate in certificate chain
         // rewrite: (path) => path.replace(/^\/api/, ''),
