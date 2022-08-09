@@ -6,7 +6,7 @@ import {router as tenantRouter} from './routes/tenant.route';
 
 const app: Application = express();
 const port = 3000;
-const apiPrefix = '/api/v1';
+const apiPrefix = '/cloudapi/1.0.0'; // '/api/v1'
 
 // Body parsing Middleware
 app.use(express.json());

@@ -27,7 +27,7 @@ const HomePage = () => {
           )}
         </div>
         <div className="mx-auto flex w-4/5 max-w-3xl flex-col items-center justify-center gap-4 sm:w-full">
-          <img src="/assets/gc.svg" alt="catalog introduction" />
+          <img src="assets/gc.svg" alt="catalog introduction" />
           <span className="text-sm font-semibold text-sky-700 dark:text-sky-400">Rackspace Global IaaS Topology</span>
         </div>
       </div>

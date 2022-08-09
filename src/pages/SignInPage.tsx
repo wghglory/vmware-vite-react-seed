@@ -26,7 +26,7 @@ export default function SignInPage() {
 
   return (
     <div
-      className="relative flex bg-[url('/assets/login.svg')] bg-cover bg-no-repeat"
+      className="relative flex bg-[url('assets/login.svg')] bg-cover bg-no-repeat"
       style={{
         backgroundPosition: '25.2rem 0',
       }}

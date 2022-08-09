@@ -38,8 +38,15 @@ export default defineConfig({
     cors: true,
     proxy: {
       // common usage
-      '/api/v1/gc': {
+      '/api/v1': {
         target: 'http://localhost:4000', // mock
+        changeOrigin: true,
+        secure: false, // [vite] http proxy error: Error: self signed certificate in certificate chain
+        // rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      '/cloudapi/': {
+        // target: 'http://localhost:3000', // mock
+        target: 'https://alp-vcd103.eng.vmware.com', // mock
         changeOrigin: true,
         secure: false, // [vite] http proxy error: Error: self signed certificate in certificate chain
         // rewrite: (path) => path.replace(/^\/api/, ''),
