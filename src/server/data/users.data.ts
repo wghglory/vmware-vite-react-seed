@@ -6,7 +6,7 @@ const users: User[] = [
     name: 'Admin',
     username: 'admin',
     password: 'test',
-    role: 'SYSTEM_OPERATOR',
+    role: 'PROVIDER_ADMIN',
     email: 'admin@vmware.com',
     tenantId: 'tenantId',
   },

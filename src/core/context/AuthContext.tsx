@@ -45,7 +45,7 @@ export function AuthProvider({children, value}: {children: React.ReactNode; valu
           meta: {token},
         });
 
-        const defaultPath = ['SYSTEM_OPERATOR', 'PROVIDER_ADMIN'].includes(user.role)
+        const defaultPath = ['PROVIDER_ADMIN'].includes(user.role)
           ? RoutePath.dashboard
           : ['TENANT_USER', 'TENANT_ADMIN'].includes(user.role)
           ? RoutePath.tenantHome

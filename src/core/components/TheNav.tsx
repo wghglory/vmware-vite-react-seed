@@ -220,9 +220,6 @@ export default TheNav;
 function generateNavLinks(user: User | null) {
   if (!user) return null;
 
-  if (user.role === 'SYSTEM_OPERATOR') {
-    return [{text: 'Home', to: RoutePath.dashboard}];
-  }
   if (user.role === 'PROVIDER_ADMIN') {
     return [{text: 'Home', to: RoutePath.dashboard}];
   }

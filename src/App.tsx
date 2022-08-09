@@ -27,7 +27,7 @@ function App() {
           <Route
             path={RoutePath.dashboard}
             element={
-              <RequireAuth roles={['SYSTEM_OPERATOR', 'PROVIDER_ADMIN']}>
+              <RequireAuth roles={['PROVIDER_ADMIN']}>
                 <DashboardPage />
               </RequireAuth>
             }
