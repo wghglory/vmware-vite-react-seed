@@ -4,6 +4,7 @@ import {useClickAway} from 'react-use';
 
 import {RoutePath} from '@/core/const/routePath';
 import {useAuth} from '@/core/context/AuthContext';
+import {l10n} from '@/i18n/i18nUtils';
 
 import {User, VcdSession} from '../models/user';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -63,7 +64,7 @@ const TheNav = () => {
                     d="M5.007 11.969c-.793 0-1.567.236-2.226.678a4.021 4.021 0 00-1.476 1.807 4.042 4.042 0 00.869 4.386 4.001 4.001 0 004.366.873 4.011 4.011 0 001.798-1.483 4.038 4.038 0 00-.5-5.08 4.004 4.004 0 00-2.831-1.181z"
                   />
                 </svg>
-                <span className="text-xl text-gray-100">PRODUCT</span>
+                <span className="text-xl text-gray-100">{l10n('common.product')}</span>
               </Link>
             </h1>
             <nav className="hidden h-full md:block">
