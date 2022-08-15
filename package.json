@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "fix": "npx eslint --fix --ext .js,.ts,.tsx .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(vue|js|jsx|ts|tsx|json|css|scss|md|html)\"",
-    "postinstall": "cd src/server && npm i"
+    "postinstall": "cd src/server && yarn"
   },
   "dependencies": {
     "@cds/city": "^1.1.0",
